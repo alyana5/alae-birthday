@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Alae!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #a8edea, #d0f0c0);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #056674;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: #045d56;
+      margin-bottom: 0.5em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 500px;
+      animation: fadeIn 2s ease-in-out;
+      margin: 1em 0;
+    }
+
+    .surprise-button {
+      padding: 1em 2em;
+      font-size: 1em;
+      background-color: #6ee7b7;
+      border: none;
+      border-radius: 12px;
+      color: #034752;
+      cursor: pointer;
+      transition: 0.3s;
+      animation: fadeIn 2.5s ease-in-out;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-top: 1.5em;
+    }
+
+    .surprise-button:hover {
+      background-color: #81e6d9;
+      transform: scale(1.05);
+    }
+
+    #surprise {
+      margin-top: 2em;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    #surprise img {
+      width: 250px;
+      border-radius: 20px;
+      margin-bottom: 1em;
+    }
+
+    audio {
+      margin-top: 1em;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #00c2ff;
+      animation: fall 3s infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .final-message {
+      font-weight: bold;
+      color: #056674;
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday Alae Eddine! 🎉</h1>
+  <h2>chrefti😂 🎂💫</h2>
+  <p>Wishing you joy, success, and all the beautiful things in life. Today is your day, enjoy it to the fullest!</p>
+
+  <button class="surprise-button" onclick="showSurprise()">🎁 Click here to open your surprise gift!</button>
+
+  <div id="surprise">
+    <img src="cake.png" alt="Birthday Cake" />
+    <audio controls autoplay>
+      <source src="01-Monk-Turner-Fascinoma-Its-Your-Birthday(chosic.com).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="final-message">
+      Keep being awesome😎, Alae! 💙<br>
+      You're the type of person who brings sunshine wherever you go<br>
+      I wish you a life filled with happiness, joy, and success☀️
+    </div>
+  </div>
+
+  <script>
+    function showSurprise() {
+      document.getElementById('surprise').style.display = 'flex';
+      generateConfetti();
+    }
+
+    function generateConfetti() {
+      for (let i = 0; i < 40; i++) {
+        let confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.top = Math.random() * -20 + 'vh';
+        confetti.style.backgroundColor = ['#00c2ff', '#6ee7b7', '#81e6d9', '#a0e3f0'][Math.floor(Math.random() * 4)];
+        confetti.style.animationDelay = Math.random() * 3 + 's';
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 4000);
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
